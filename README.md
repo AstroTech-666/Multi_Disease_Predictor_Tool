@@ -1,7 +1,9 @@
 # Multiple Disease Predictor
 
-![Image Description](img.png)
-![Image1 Description](img1.png)
+![Image Description](img1.png)  
+
+![Image1 Description](img.png)
+
 
 ## About
 
