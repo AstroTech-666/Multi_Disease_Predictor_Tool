@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="KVG Disease Predictor">
+    <meta name="author" content="VENU GOPAL KADAMBA">
+    <meta name="og:image" content="static/logo1.png">
+    <meta name="keywords" content="Flask, Machine Learning, Deep Learning, Artificial Intelligence, AI, ML, DL, Web Development">
+    <meta name="description" content="A Machine Learning and Deep Learning based webapp for Multiple Disease Prediction.">
+    <title>Disease Predictor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            padding-top: 80px; /* Adjust this value to your preference */
+        }
+        
+        main {
+            flex: 1;
+            padding: 40px 15px;
+            margin-top: 20px; /* Add margin-top for extra space */
+        }
+        
+        .navbar {
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Make sure the navbar stays on top */
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        .nav-item {
+            margin-left: 15px;
+        }
+        .nav-item a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-item a:hover {
+            color: #ff7f50;
+        }
+        footer {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: auto;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #ff7f50;
+        }
+        footer i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('diabetesPage') }}">Diabetes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cancerPage') }}">Breast Cancer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('heartPage') }}">Heart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('kidneyPage') }}">Kidney</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('liverPage') }}">Liver</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('malariaPage') }}">Malaria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('pneumoniaPage') }}">Pneumonia</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container mt-5 pt-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Made by Farzana</p>
+        <p>
+            <a href="https://www.linkedin.com/in/farzana-abdulzada-5382a7295" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/AstroTech-666" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
